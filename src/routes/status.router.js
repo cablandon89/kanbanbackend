@@ -5,7 +5,7 @@ import {
   postStatus,
   updateStatus,
   deleteStatus,
-} from '../controllers/status.controller';
+} from '../controllers/status.controller.js';
 
 const routes = Router();
 

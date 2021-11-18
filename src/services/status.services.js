@@ -1,4 +1,5 @@
-import Models from '../models/init-models';
+// eslint-disable-next-line import/extensions
+import Models from '../models/init-models.js';
 
 const { status } = Models();
 
@@ -6,7 +7,9 @@ export default class StatusService {
   static async getAll() {
     // eslint-disable-next-line no-useless-catch
     try {
-      const result = await status.findAll();
+      const result = await status.findAll({
+        attributes: { exclude: ['created_at', 'updated_at'] },
+      });
       return result;
     } catch (err) {
       throw err;

@@ -1,4 +1,5 @@
-import StatusService from '../services/status.services';
+// eslint-disable-next-line import/extensions
+import StatusService from '../services/status.services.js';
 
 export const getStatus = async (req, res, next) => {
   try {

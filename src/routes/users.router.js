@@ -1,5 +1,13 @@
-import {Router} from 'express';
-import { getUsers, getUserById, homeCtrl, postUser, updateUser, deleteUser } from '../controllers/users.controller.js';
+import { Router } from 'express';
+import {
+  getUsers,
+  getUserById,
+  homeCtrl,
+  postUser,
+  updateUser,
+  deleteUser,
+// eslint-disable-next-line import/extensions
+} from '../controllers/users.controller.js';
 
 const routes = Router();
 

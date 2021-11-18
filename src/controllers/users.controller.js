@@ -1,5 +1,5 @@
-import UserService from "../services/users.services.js";
-
+// eslint-disable-next-line import/extensions
+import UserService from '../services/users.services.js';
 
 export const homeCtrl = async (req, res, next) => {
   try {
@@ -8,7 +8,6 @@ export const homeCtrl = async (req, res, next) => {
     next(error);
   }
 };
-
 
 export const getUsers = async (req, res, next) => {
   try {
@@ -21,22 +20,19 @@ export const getUsers = async (req, res, next) => {
 
 export const getUserById = async (req, res, next) => {
   try {
-    let {id} = req.params;
+    let { id } = req.params;
     id = Number(id);
     const user = await UserService.getById(id);
     res.json(user);
-
   } catch (err) {
     next(err);
   }
-}
+};
 
 export const postUser = async (req, res, next) => {
   try {
     // Obtenemos los datos que nos envia el cliente a través del body
-    const body = req.body;
-    
-    
+    const { body } = req;
     // Mandamos a llamar al servicio para insertar el usuario
     const user = await UserService.postUser(body);
     // Enviamos una respuesta 201 con el registro que acabamos de agregar a la DB
@@ -46,6 +42,7 @@ export const postUser = async (req, res, next) => {
   }
 };
 
+// eslint-disable-next-line consistent-return
 export const updateUser = async (req, res, next) => {
   try {
     let { id } = req.params;
@@ -64,6 +61,7 @@ export const updateUser = async (req, res, next) => {
   }
 };
 
+// eslint-disable-next-line consistent-return
 export const deleteUser = async (req, res, next) => {
   try {
     let { id } = req.params;
